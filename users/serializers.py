@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from users.models import CustomUser
+from users.models import CustomUser,Roles
 
 class CustomUserSerializer(serializers.Serializer):
     email = serializers.EmailField()

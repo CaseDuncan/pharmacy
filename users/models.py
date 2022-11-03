@@ -60,7 +60,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         return f"{self.first_name} {self.last_name}"
 
 class UserActivities(models.Model):
-    user = models.ForeignKey(CustomUser, related_name="user activities", on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(CustomUser, related_name="useractivities", on_delete=models.SET_NULL, null=True)
     email = models.EmailField()
     fullname = models.CharField(max_length=100)
     action = models.TextField()
