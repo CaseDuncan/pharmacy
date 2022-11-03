@@ -59,3 +59,16 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def get_fullname(self):
         return f"{self.first_name} {self.last_name}"
 
+class UserActivities(models.Model):
+    user = models.ForeignKey(CustomUser, related_name="user activities", on_delete=models.SET_NULL, null=True)
+    email = models.EmailField()
+    fullname = models.CharField(max_length=100)
+    action = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        ordering = ['created_at']
+    
+    # def __str__(self):
+    #     return f"{self.fullname} {self.action} on {self.created_at.strftime('%Y-%m-%d-%i')"
+    
