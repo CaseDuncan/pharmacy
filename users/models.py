@@ -46,7 +46,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     last_login = models.DateTimeField(_("Last Login"), null=True)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS=['username']
+    REQUIRED_FIELDS=['username', 'password']
     objects = CustomUserManager()
 
     def __str__(self):
