@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import Container from '@mui/material/Container';
 import { useNavigate } from 'react-router-dom';
 
@@ -93,7 +93,7 @@ const Categories = () => {
             data-bs-toggle="modal"
             data-bs-target="#categoryModal"
           >
-            Add
+            <AddCircleOutlineOutlinedIcon/> Add
           </button>
         </div>
       </div>
@@ -113,14 +113,7 @@ const Categories = () => {
             <div class="modal-body">
               <Container component="main" maxWidth="xs">
                 <CssBaseline />
-                <Box
-                  sx={{
-                    marginTop: 8,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                  }}
-                >
+                <Box>
                   <Box
                     component="form"
                     onSubmit={handleSubmit}

@@ -4,12 +4,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Container from '@mui/material/Container';
+import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
 import { useNavigate } from 'react-router-dom';
 import DataTable from "../../common/DataTable/DataTable";
 
@@ -158,7 +158,7 @@ const Products = () => {
             data-bs-toggle="modal"
             data-bs-target="#productModal"
           >
-            Add
+           <AddCircleOutlinedIcon/>  Add
           </button>
         </div>
       </div>
