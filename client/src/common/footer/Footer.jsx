@@ -4,8 +4,8 @@ const Footer = () => {
     let date = new Date()
     let year = date.getFullYear()
   return (
-      <div>
-          <h5>Copyright &copy; CaseDuncan { year} All rights Reserved</h5>
+      <div className='mt-5'>
+          <p className='fw-bold'>Copyright &copy; CaseDuncan { year} All rights Reserved</p>
     </div>
   )
 }

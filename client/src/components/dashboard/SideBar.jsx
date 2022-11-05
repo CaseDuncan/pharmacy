@@ -15,16 +15,14 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import SpeedOutlinedIcon from '@mui/icons-material/SpeedOutlined';
-import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOutlined';
-import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
+// import SpeedOutlinedIcon from '@mui/icons-material/SpeedOutlined';
+// import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOutlined';
+// import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCheckoutOutlined';
 import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import Products from '../products/Products';
 import { useNavigate } from 'react-router-dom'
-import Category from '../category/Category'
-import TestCat from '../category/TestCat';
 import Categories from '../category/Categories';
 
 const drawerWidth = 240;
@@ -117,9 +115,7 @@ const SideBar = () => {
       >
         <Toolbar />
           <Products />
-          <Category />
-          <Categories/>
-        
+          <Categories />
       </Box>
     </Box>
     </div>

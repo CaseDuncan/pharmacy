@@ -1,0 +1,15 @@
+sample categories of medicines and examples 
+   antidepressants:=>Antidepressants are a class of medication used to treat major depressive disorder, some anxiety disorders, some chronic pain conditions, and to help manage some addictions.
+   examples:fluoxetine (Prozac), paroxetine (Paxil, Pexeva), sertraline (Zoloft), citalopram (Celexa) and escitalopram (Lexapro)
+
+   painkillers:=>betapain, panadol, paracetamol
+   antimalarial:=>Chloroquine
+   antibiotics:=>phenoxymethylpenicillin, flucloxacillin and amoxicillin.
+   mood stablizers:=>carbamazepine (Tegretol),lamotrigine (Lamictal),valproate (Depakote, Epilim).
+   Anticeptics=> Antiseptics are the chemical drugs which either kill or prevent the growth of microorganisms. They are applied selectively to living tissues such as wounds, cuts, ulcers, and diseased skin surfaces
+     examples:Furacin and soframycin
+
+   contraceptives:=>condoms,p2 
+   
+   //products
+     pregency test kits
