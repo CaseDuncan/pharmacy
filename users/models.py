@@ -22,14 +22,16 @@ class CustomUserManager(BaseUserManager):
         
         if not email:
             raise ValueError(_("Email is required"))
+        return self.create_user(email, password, username, first_name, last_name, **extra_fields)
         
-        REQUIRED_FIELDS=['username','email', 'password']
-
-
-        user = self.model(email=email, **extra_fields)
-        user.set_password(password)
-        user.save()
-        return user
+        def create(self, email, username, password, role,**extra_fields):
+            if not email:
+                raise ValueError('You must provide an email address')
+            email = self.normalize(email)
+            user = self.model(email=email, **extra_fields)
+            user.set_password(password)
+            user.save()
+            return user
 
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
@@ -44,10 +46,11 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     created_at = models.DateTimeField(_("Created At"), auto_now_add=True)
     updated_at = models.DateTimeField(_("Updated At"), auto_now=True)
     last_login = models.DateTimeField(_("Last Login"), null=True)
-
+      
+    objects = CustomUserManager()
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS=['username', 'password']
-    objects = CustomUserManager()
+  
 
     def __str__(self):
         return self.username
@@ -59,16 +62,3 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def get_fullname(self):
         return f"{self.first_name} {self.last_name}"
 
-class UserActivities(models.Model):
-    user = models.ForeignKey(CustomUser, related_name="useractivities", on_delete=models.SET_NULL, null=True)
-    email = models.EmailField()
-    fullname = models.CharField(max_length=100)
-    action = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    
-    class Meta:
-        ordering = ['created_at']
-    
-    # def __str__(self):
-    #     return f"{self.fullname} {self.action} on {self.created_at.strftime('%Y-%m-%d-%i')"
-    
