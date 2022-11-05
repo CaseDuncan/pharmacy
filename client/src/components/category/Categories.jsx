@@ -81,81 +81,100 @@ const Categories = () => {
         })
       }
   return (
-      <div style={{ height: 400, width: '100%' }} className='mt-5'>
-          
-          <div className="row">
-              <div className="col-md-6"><h3>Product Categories</h3></div>
-          <div className="col-md-6">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#categoryModal">Add</button>
+    <div style={{ height: 400, width: "100%" }} className="mt-5">
+      <div className="row">
+        <div className="col-md-6">
+          <h3>Product Categories</h3>
+        </div>
+        <div className="col-md-6">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#categoryModal"
+          >
+            Add
+          </button>
+        </div>
+      </div>
+
+      <div class="modal mt-5 fade" id="categoryModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Add Category</h4>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <div class="modal-body">
+              <Container component="main" maxWidth="xs">
+                <CssBaseline />
+                <Box
+                  sx={{
+                    marginTop: 8,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  <Box
+                    component="form"
+                    onSubmit={handleSubmit}
+                    noValidate
+                    sx={{ mt: 1 }}
+                  >
+                    <TextField
+                      margin="normal"
+                      required
+                      fullWidth
+                      id="name"
+                      label="Category Name"
+                      name="name"
+                      autoComplete="off"
+                      autoFocus
+                      value={formData.name}
+                      onChange={(e) => handleChange(e)}
+                    />
+
+                    <Button
+                      type="submit"
+                      fullWidth
+                      variant="contained"
+                      sx={{ mt: 3, mb: 2 }}
+                    >
+                      Create
+                    </Button>
+                  </Box>
+                </Box>
+              </Container>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
           </div>
-          </div>
-
-<div class="modal mt-5 fade" id="categoryModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h4 class="modal-title">Add Category</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
       </div>
-
-      
-      <div class="modal-body mt-0">
-      <Container component="main" maxWidth="xs">
-     <CssBaseline />
-     <Box
-       sx={{
-         marginTop: 8,
-         display: 'flex',
-         flexDirection: 'column',
-         alignItems: 'center',
-       }}
-     >
-       <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-         <TextField
-           margin="normal"
-           required
-           fullWidth
-           id="name"
-           label="Category Name"
-           name="name"
-           autoComplete="off"
-           autoFocus
-           value={formData.name}
-           onChange={(e)=>handleChange(e)}
-         />
-         
-         <Button
-           type="submit"
-           fullWidth
-           variant="contained"
-           sx={{ mt: 3, mb: 2 }}
-         >
-           Create
-         </Button>
-       </Box>
-     </Box>
-   </Container>
-      </div>
-
-     
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-      </div>
-
+      <DataGrid
+        rows={categories}
+        columns={columns}
+        pageSize={5}
+        rowsPerPageOptions={[5]}
+        checkboxSelection
+        loading={!categories.length}
+      />
     </div>
-  </div>
-</div>
-          <DataGrid
-              rows={categories}
-              columns={columns}
-              pageSize={5}
-              rowsPerPageOptions={[5]}
-              checkboxSelection
-              loading={!categories.length}
-          />
-    </div>
-  )
+  );
 }
 
 export default Categories

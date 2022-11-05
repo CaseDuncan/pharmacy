@@ -1,18 +1,19 @@
-import React from 'react'
-import { DataGrid } from '@mui/x-data-grid';
+import React from "react";
+import { DataGrid } from "@mui/x-data-grid";
 
-const DataTable = ({rows, columns, loading}) => {
-
-    
+const DataTable = ({ rows, columns, loading }) => {
   return (
-      <div  style={{ height: 400, width: '100%' }}>
-          <DataGrid
-          rows={rows}
-          columns={columns}
-          loading={loading}
+    <div style={{ height: 400, width: "100%" }}>
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        loading={loading}
+        pageSize={5}
+        rowsPerPageOptions={[5]}
+        checkboxSelection
       />
-      </div>
-  )
-}
+    </div>
+  );
+};
 
-export default DataTable
+export default DataTable;

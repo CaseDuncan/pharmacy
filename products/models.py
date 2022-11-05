@@ -25,24 +25,6 @@ class Product(models.Model):
     class Meta:
         ordering=['created_at']
     
-    def save(self,*args, **kwargs):
-        is_new = self.pk = None
-
-        if is_new:
-            self.instock = self.quantity
-        super().save(*args, **kwargs)
-
-        action = "created new item"
-        
-        if not is_new:
-            f"updated item {self.name}"
-        
-        
-    def delete(self, *args, **kwargs):
-        created_by = self.created_by
-        action = f"deleted item {self.name}"
-        super().delete(*args,**kwargs)
-    
     def __str__(self):
         return f"{self.name}, {self.category}"
     
